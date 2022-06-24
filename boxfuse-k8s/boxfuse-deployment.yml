@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boxfuse-deployment
+  labels:
+    app: boxfuse
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boxfuse
+  template:
+    metadata:
+      labels:
+        app: boxfuse
+    spec:
+      containers:
+      - name: boxfuse
+        image: wwbel/boxfuse
+        ports:
+        - containerPort: 8080
