@@ -6,6 +6,7 @@ services:
       - MYSQL_USER=java
       - MYSQL_PASSWORD=java
       - MYSQL_DATABASE=java
+      - MYSQL_ROOT_PASSWORD=java
     ports:
       - "3306:3306"
     volumes:
