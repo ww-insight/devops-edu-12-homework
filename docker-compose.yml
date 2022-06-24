@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_USER=java
+      - MYSQL_PASSWORD=java
+      - MYSQL_DATABASE=java
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+  web:
+    build: web
+    ports:
+      - "8080:8080"
+volumes:
+  mysql-data:
