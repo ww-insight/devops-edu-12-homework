@@ -9,8 +9,6 @@ services:
       - MYSQL_ROOT_PASSWORD=java
     ports:
       - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
   web:
     build: web
     ports:
