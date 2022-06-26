@@ -1,6 +1,6 @@
 version: '2'
 services:
-  mysql-db:
+  mysqldb:
     image: mysql:latest
     environment:
       - MYSQL_USER=java
@@ -13,8 +13,8 @@ services:
       - my-network
   web:
     build: web
-    links:
-      - mysql-db
+    depends_on:
+      - mysqldb
     ports:
       - "8080:8080"
     networks:
