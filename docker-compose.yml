@@ -15,7 +15,7 @@ services:
       - mysql-db
     ports:
       - "8080:8080"
-network:
+networks:
   my-network:
 volumes:
   mysql-data:
