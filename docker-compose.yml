@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: mysql:5.7.38
+    image: mysql:latest
     environment:
       - MYSQL_USER=java
       - MYSQL_PASSWORD=java
@@ -9,6 +9,8 @@ services:
       - MYSQL_ROOT_PASSWORD=java
     ports:
       - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
   web:
     build: web
     ports:
